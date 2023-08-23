@@ -1,0 +1,4 @@
+node_modules
+*.sh
+.parcel-cache
+*.log

@@ -1,0 +1,13 @@
+{
+  "name": "kuchiguse-counter",
+  "version": "1.0.0",
+  "description": "Count how many times you say your catchphrase using Web Audio API’s speech recognition",
+  "author": "atano",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/dom-speech-recognition": "^0.0.1",
+    "parcel": "^2.9.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.1.6"
+  }
+}
