@@ -23,13 +23,13 @@
     <div id="config">
       <p>音声認識を使って口癖を言った回数をカウントします。</p>
       <form onsubmit="return false;" class="pure-form">
-        <!-- <label for="bgcolor">背景色:</label>
-      <input class="pure-button" type="color" name="bgcolor" id="bgcolor">
-      <label for="textcolor">文字色:</label>
-      <input type="color" name="textcolor" id="textcolor"><br> -->
+        <label for="bg-color">背景色:</label>
+        <input class="pure-button" type="color" name="bg-color" id="bg-color">
+        <label for="text-color">文字色:</label>
+        <input type="color" name="text-color" id="text-color"><br>
         <input type="text" placeholder="口癖を入力" name="phrase-input" id="phrase-input">
         <input type="number" placeholder="回数を設定" name="count-input" id="count-input">
-        <button type="button" class="pure-button pure-button-primary" id="ok">決定</button>
+        <button class="pure-button pure-button-primary" id="ok">決定</button>
       </form>
     </div>
     <script type="module" src="ts/index.ts"></script>
