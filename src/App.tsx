@@ -85,12 +85,12 @@ export default function App() {
   useEffect(() => {
     recognizer.setPhrase(appState.phrase);
     recognizer.callback = handleRecognition;
-  }, [appState.phrase, recognizer]);
+  }, [appState.phrase]);
 
   // set count
   useEffect(() => {
     recognizer.setCount(recognizerState.count);
-  }, [recognizerState.count, recognizer]);
+  }, [recognizerState.count]);
 
   // animate on count up
   useEffect(() => {
@@ -100,7 +100,7 @@ export default function App() {
         shake: true,
       });      
     }
-  }, [recognizerState.count, appState.animate]);
+  }, [appState]);
 
   const handleBGColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let bgColor = e.target.value;
