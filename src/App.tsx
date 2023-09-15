@@ -20,8 +20,8 @@ interface RecognizerState {
 let recognizer: PhraseCounter;
 
 type PhraseCounterEvent =
-  | { type: 'count-changed', count: number}
-  | { type: 'phrase-recognized', count: number, message: string}
+  | { type: 'count-changed', count: number }
+  | { type: 'phrase-recognized', count: number, message: string }
 
 function reducer(recognizerState: RecognizerState, action: PhraseCounterEvent): RecognizerState {
   switch (action.type) {
@@ -36,7 +36,7 @@ function reducer(recognizerState: RecognizerState, action: PhraseCounterEvent): 
         message: action.message,
       };
   }
-} 
+}
 
 
 
@@ -47,7 +47,7 @@ export default function App() {
       const storedValue = localStorage.getItem(key);
       return storedValue !== null ? storedValue : defaultValue;
     };
-    
+
     const defaultState = {
       bgColor: loadStateFromLocalStorage('bgColor', '#ffffff'),
       textColor: loadStateFromLocalStorage('textColor', '#1a1a1a'),
@@ -56,12 +56,12 @@ export default function App() {
       animate: loadStateFromLocalStorage('animate', 'false') === 'true',
       shake: false,
     };
-    
+
     return defaultState;
   });
 
-  const [recognizerState, dispatchRecognitionEvent] = 
-    useReducer(reducer,  {
+  const [recognizerState, dispatchRecognitionEvent] =
+    useReducer(reducer, {
       count: 0,
       message: 'ここに認識されたテキスト',
     });
@@ -76,7 +76,7 @@ export default function App() {
     }
   }
 
-  useEffect (() => {
+  useEffect(() => {
     recognizer = PhraseCounter.getInstance(appState.phrase, handleRecognition);
     recognizer.start();
   });
@@ -90,17 +90,22 @@ export default function App() {
   // set count
   useEffect(() => {
     recognizer.setCount(recognizerState.count);
+    if (appState.animate) {
+      setAppState({
+        ...appState,
+        shake: true,
+      });
+    }
   }, [recognizerState.count]);
 
-  // animate on count up
   useEffect(() => {
     if (appState.animate) {
       setAppState({
         ...appState,
         shake: true,
-      });      
+      });
     }
-  }, [appState]);
+  }, [appState.animate]);
 
   const handleBGColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let bgColor = e.target.value;
@@ -136,7 +141,7 @@ export default function App() {
     });
   }
 
-  const handleAnimateChange = (e: React.ChangeEvent<HTMLInputElement>) => { 
+  const handleAnimateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAppState({
       ...appState,
       animate: e.target.checked,
