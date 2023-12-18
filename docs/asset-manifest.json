@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PhraseCounter/static/css/main.cd592d58.css",
-    "main.js": "/PhraseCounter/static/js/main.0aa13041.js",
+    "main.css": "/PhraseCounter/static/css/main.2e505942.css",
+    "main.js": "/PhraseCounter/static/js/main.a639e4eb.js",
     "static/js/787.0e16cb9f.chunk.js": "/PhraseCounter/static/js/787.0e16cb9f.chunk.js",
     "index.html": "/PhraseCounter/index.html",
-    "main.cd592d58.css.map": "/PhraseCounter/static/css/main.cd592d58.css.map",
-    "main.0aa13041.js.map": "/PhraseCounter/static/js/main.0aa13041.js.map",
+    "main.2e505942.css.map": "/PhraseCounter/static/css/main.2e505942.css.map",
+    "main.a639e4eb.js.map": "/PhraseCounter/static/js/main.a639e4eb.js.map",
     "787.0e16cb9f.chunk.js.map": "/PhraseCounter/static/js/787.0e16cb9f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd592d58.css",
-    "static/js/main.0aa13041.js"
+    "static/css/main.2e505942.css",
+    "static/js/main.a639e4eb.js"
   ]
 }

@@ -184,7 +184,13 @@ export default function App() {
             </div>
             <div className="pure-control-group">
               <label htmlFor="phrase">くちぐせ</label>
-              <input onInput={handlePhraseChange} defaultValue={appState.phrase} type="text" placeholder="口癖を入力" name="phrase" id="phrase" />
+              <input list="template" onInput={handlePhraseChange} defaultValue={appState.phrase} type="text" placeholder="口癖を入力" name="phrase" id="phrase" />
+              <datalist id="template">
+                <option value="カタカナ語|[A-zァ-ヴーー]+" />
+                <option value="感謝|ありがとう|うれしい|嬉し|たのし|楽し|しあわせ|幸せ|すき|好き|Happy|ハッピー" />
+                <option value="弱音|こわい|怖|もうやだ|かえりたい|帰りたい|むり|無理|たすけて|助けて|死ぬ|死んだ" />
+                <option value="暴言|バカ|馬鹿|クソ|糞|しね|死ね|ウザ|消えろ|カス|ファック" />
+              </datalist>
             </div>
             <div className="pure-control-group">
               <label htmlFor="count">カウント</label>
