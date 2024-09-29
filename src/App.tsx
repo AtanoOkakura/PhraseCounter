@@ -66,7 +66,7 @@ export default function App() {
       message: 'ここに認識されたテキスト',
     });
 
-  const handleRecognition = (phrase: string, count: number, message?: string) => {
+  const handleRecognition = (_phrase: string, count: number, message?: string) => {
     if (message) {
       dispatchRecognitionEvent({
         type: 'phrase-recognized',

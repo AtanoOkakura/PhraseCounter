@@ -1,3 +1,19 @@
+declare type SpeechRecognitionEvent = any;
+
+declare class SpeechRecognition {
+    lang: string;
+    interimResults: boolean;
+    maxAlternatives: number;
+    onresult: (event: SpeechRecognitionEvent) => void;
+    onend: () => void;
+    onstart: () => void;
+    start: () => void;
+    grammars: SpeechGrammarList;
+}
+declare class SpeechGrammarList {
+    addFromString: (str: string, weight: number) => void;
+}
+
 const MySpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
 const MySpeechGrammarList = (window as any).SpeechGrammarList || (window as any).webkitSpeechGrammarList;
 

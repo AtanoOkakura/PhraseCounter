@@ -16,7 +16,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   # Single deploy job since we're just deploying
@@ -33,9 +33,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - name: build
-        run: yarn && yarn install && yarn build
+        run: yarn && yarn install --frozen-lockfile && yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
